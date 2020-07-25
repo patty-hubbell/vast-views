@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Fjalla+One&display=swap");
+
+:root {
+  --black: #000;
+  --dark: #2b2d42;
+  --gray: #8d99ae;
+  --light: #edf2f4;
+  --primary: #d90429;
+  --secondary: #ef233c;
+  --white: #fff;
+}
+
+body {
+  background-color: var(--light);
+  margin: 0;
+  font-family: "Fjalla One", sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Media query for large mobile devices */
+@media screen and (max-width: 600px) {
+  #header-title {
+    font-size: 1.7rem;
+  }
+
+  #wallpaper-container {
+    margin: 10px;
+  }
+}
