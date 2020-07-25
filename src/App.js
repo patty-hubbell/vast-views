@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
+
 import Header from "./components/Header";
 import Loader from "./components/Loader";
-import Wallpapers from "./components/Wallpapers";
+import Images from "./components/Images";
+import unsplashApi from "./api/unsplashApi";
 
 export default function App() {
+  const unsplash = unsplashApi();
+
+  useEffect(() => {
+    unsplash.getImages();
+  }, []);
+
   return (
     <>
-      {/* <Loader /> */}
+      <Loader />
       <Header />
-      <Wallpapers />
+      <Images />
     </>
   );
 }

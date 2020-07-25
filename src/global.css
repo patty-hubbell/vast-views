@@ -13,6 +13,7 @@
 body {
   background-color: var(--light);
   margin: 0;
+  margin-top: 5rem;
   font-family: "Fjalla One", sans-serif;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
@@ -21,11 +22,19 @@ body {
 
 /* Media query for large mobile devices */
 @media screen and (max-width: 600px) {
+  body {
+    margin-top: 4rem;
+  }
+
+  #header-container {
+    height: 4rem;
+  }
+
   #header-title {
     font-size: 1.7rem;
   }
 
-  #wallpaper-container {
+  #image-container {
     margin: 10px;
   }
 }

@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export default function Loader() {
   return (
-    <Load.Container>
+    <Load.Container id="loader">
       <Load.Icon alt="Loading" src={require("../assets/loader.svg")} />
     </Load.Container>
   );
@@ -17,6 +17,7 @@ const Load = {
     position: fixed;
     right: 0;
     top: 0;
+    z-index: 1;
   `,
   Icon: styled.img`
     position: fixed;
