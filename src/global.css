@@ -39,6 +39,10 @@ body {
     margin: 10px;
   }
 
+  #image-options-button {
+    font-size: 0.8rem;
+  }
+
   #image-options-form {
     top: 3rem;
   }

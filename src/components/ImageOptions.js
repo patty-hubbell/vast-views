@@ -19,7 +19,9 @@ export default function ImageOptions() {
 
   return (
     <>
-      <Options.Button onClick={handleClick}>Image Options</Options.Button>
+      <Options.Button id="image-options-button" onClick={handleClick}>
+        Image Options
+      </Options.Button>
       <Options.Form id="image-options-form">
         <input type="radio" id="portrait" name="display" value="portrait" />
         <label>Portrait</label>
