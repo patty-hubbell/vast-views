@@ -76,7 +76,7 @@ const Options = {
     position: absolute;
     top: 4rem;
     transition: 500ms ease;
-    /* visibility: hidden; */
+    visibility: hidden;
 
     & input {
       margin-bottom: 1rem;

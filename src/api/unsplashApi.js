@@ -44,6 +44,9 @@ export default function unsplashApi() {
 
   let imageOptions = "both";
 
+  let loader;
+  let imageContainer;
+
   let imagesArray = [];
   let ready = false;
   let imagesLoaded = 0;
@@ -58,7 +61,6 @@ export default function unsplashApi() {
   // Check if all the images were loaded
   const imageLoaded = () => {
     imagesLoaded++;
-    const loader = document.getElementById("loader");
 
     if (imagesLoaded === totalImages) {
       ready = true;
@@ -68,8 +70,6 @@ export default function unsplashApi() {
 
   // Create elements for images to display to user
   const displayImages = () => {
-    const imageContainer = document.getElementById("image-container");
-
     // Reset the number of images that have been loaded from latest response
     imagesLoaded = 0;
 
@@ -115,6 +115,9 @@ export default function unsplashApi() {
   };
 
   const getImageOptions = () => {
+    loader = document.getElementById("loader");
+    imageContainer = document.getElementById("image-container");
+
     document
       .getElementById("image-options-form")
       .addEventListener("click", () => {
@@ -126,6 +129,7 @@ export default function unsplashApi() {
           imageOptions = "portrait";
           imageContainer.textContent = "";
           window.scrollTo(0, 0);
+          loader.hidden = false;
           getImages();
         } else if (
           document.getElementById("landscape").checked &&
@@ -134,6 +138,7 @@ export default function unsplashApi() {
           imageOptions = "landscape";
           imageContainer.textContent = "";
           window.scrollTo(0, 0);
+          loader.hidden = false;
           getImages();
         } else if (
           document.getElementById("both").checked &&
@@ -142,6 +147,7 @@ export default function unsplashApi() {
           imageOptions = "both";
           imageContainer.textContent = "";
           window.scrollTo(0, 0);
+          loader.hidden = false;
           getImages();
         }
       });
