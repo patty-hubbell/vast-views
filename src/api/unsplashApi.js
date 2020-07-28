@@ -1,5 +1,5 @@
 export default function unsplashApi() {
-  let imagesArray = [
+  /*   let imagesArray = [
     {
       alt_description: "Testing",
       links: {
@@ -40,18 +40,20 @@ export default function unsplashApi() {
           "https://images.unsplash.com/photo-1590611380053-da6447021fbb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
       },
     },
-  ];
+  ]; */
 
   let imageOptions = "both";
 
-  //let imagesArray = [];
+  let imagesArray = [];
   let ready = false;
   let imagesLoaded = 0;
   let totalImages = 0;
 
   const count = 30;
   const apiKey = "lA_pnbXwphLuyywI4jsVsH8_o43qhajfccxqwjiW6lQ";
-  const apiUrl = `https://api.unsplash.com/photos/random?client_id=${apiKey}&count=${count}&query=nature`;
+  const apiUrlBoth = `https://api.unsplash.com/photos/random?client_id=${apiKey}&count=${count}&query=nature`;
+  const apiUrlPortrait = `https://api.unsplash.com/photos/random?client_id=${apiKey}&count=${count}&query=nature&orientation=portrait`;
+  const apiUrlLandscape = `https://api.unsplash.com/photos/random?client_id=${apiKey}&count=${count}&query=nature&orientation=landscape`;
 
   // Check if all the images were loaded
   const imageLoaded = () => {
@@ -99,8 +101,15 @@ export default function unsplashApi() {
   // Get photos from the Unsplash API
   const getImages = async () => {
     try {
-      //const response = await fetch(apiUrl);
-      //imagesArray = await response.json();
+      let response;
+      if (imageOptions === "both") {
+        response = await fetch(apiUrlBoth);
+      } else if (imageOptions === "portrait") {
+        response = await fetch(apiUrlPortrait);
+      } else if (imageOptions === "landscape") {
+        response = await fetch(apiUrlLandscape);
+      }
+      imagesArray = await response.json();
       displayImages();
     } catch (error) {}
   };
@@ -109,24 +118,31 @@ export default function unsplashApi() {
     document
       .getElementById("image-options-form")
       .addEventListener("click", () => {
+        let imageContainer = document.getElementById("image-container");
         if (
           document.getElementById("portrait").checked &&
           imageOptions !== "portrait"
         ) {
           imageOptions = "portrait";
-          console.log("Portrait checked");
+          imageContainer.textContent = "";
+          window.scrollTo(0, 0);
+          getImages();
         } else if (
           document.getElementById("landscape").checked &&
           imageOptions !== "landscape"
         ) {
           imageOptions = "landscape";
-          console.log("Landscape checked");
+          imageContainer.textContent = "";
+          window.scrollTo(0, 0);
+          getImages();
         } else if (
           document.getElementById("both").checked &&
           imageOptions !== "both"
         ) {
           imageOptions = "both";
-          console.log("Both checked");
+          imageContainer.textContent = "";
+          window.scrollTo(0, 0);
+          getImages();
         }
       });
   };
