@@ -19,7 +19,7 @@ export default function Header() {
 const ContentContainer = styled.div`
   align-items: center;
   display: flex;
-  height: 5rem;
+  height: 100%;
   justify-content: center;
 `;
 

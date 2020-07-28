@@ -55,9 +55,12 @@ const Options = {
     text-decoration: none;
     transition: 500ms ease;
 
-    &:hover {
-      background-color: var(--primary);
-      color: var(--white);
+    /* Only allow the hover effect on large screens */
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: var(--primary);
+        color: var(--white);
+      }
     }
   `,
   Form: styled.form`
@@ -69,7 +72,7 @@ const Options = {
     opacity: 0;
     padding: 0.5rem;
     position: absolute;
-    top: 5rem;
+    top: 4rem;
     transition: 500ms ease;
     /* visibility: hidden; */
 

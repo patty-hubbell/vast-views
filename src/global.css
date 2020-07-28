@@ -38,4 +38,8 @@ body {
   #image-container {
     margin: 10px;
   }
+
+  #image-options-form {
+    top: 3rem;
+  }
 }
