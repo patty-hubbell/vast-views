@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faImage } from "@fortawesome/free-solid-svg-icons";
 
 export default function ImageOptions() {
   const [visible, setVisible] = useState(false);
@@ -20,6 +22,7 @@ export default function ImageOptions() {
   return (
     <>
       <Options.Button id="image-options-button" onClick={handleClick}>
+        <Options.Icon icon={faImage} />
         Image Options
       </Options.Button>
       <Options.Form id="image-options-form">
@@ -65,12 +68,16 @@ const Options = {
       }
     }
   `,
+  Icon: styled(FontAwesomeIcon)`
+    margin-right: 0.3rem;
+  `,
   Form: styled.form`
     background-color: var(--light);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     color: var(--primary);
     font-family: var(--text);
+    font-size: 1rem;
     opacity: 0;
     padding: 0.5rem;
     position: absolute;
