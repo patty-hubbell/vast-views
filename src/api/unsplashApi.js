@@ -42,6 +42,8 @@ export default function unsplashApi() {
     },
   ];
 
+  let imageOptions = "both";
+
   //let imagesArray = [];
   let ready = false;
   let imagesLoaded = 0;
@@ -103,6 +105,32 @@ export default function unsplashApi() {
     } catch (error) {}
   };
 
+  const getImageOptions = () => {
+    document
+      .getElementById("image-options-form")
+      .addEventListener("click", () => {
+        if (
+          document.getElementById("portrait").checked &&
+          imageOptions !== "portrait"
+        ) {
+          imageOptions = "portrait";
+          console.log("Portrait checked");
+        } else if (
+          document.getElementById("landscape").checked &&
+          imageOptions !== "landscape"
+        ) {
+          imageOptions = "landscape";
+          console.log("Landscape checked");
+        } else if (
+          document.getElementById("both").checked &&
+          imageOptions !== "both"
+        ) {
+          imageOptions = "both";
+          console.log("Both checked");
+        }
+      });
+  };
+
   // Check if scrolling near bottom of page, if so then load more images
   window.addEventListener("scroll", () => {
     if (
@@ -115,5 +143,5 @@ export default function unsplashApi() {
     }
   });
 
-  return { getImages };
+  return { getImages, getImageOptions };
 }

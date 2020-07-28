@@ -33,6 +33,7 @@ const Head = {
     width: 100%;
   `,
   Left: styled(ContentContainer)`
+    position: relative;
     width: 30%;
   `,
   Middle: styled(ContentContainer)`

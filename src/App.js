@@ -9,6 +9,7 @@ export default function App() {
   const unsplash = unsplashApi();
 
   useEffect(() => {
+    unsplash.getImageOptions();
     unsplash.getImages();
   }, []);
 
