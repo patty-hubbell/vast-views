@@ -73,9 +73,6 @@ export default function unsplashApi() {
   };
 
   const getImageOptions = () => {
-    loader = document.getElementById("loader");
-    imageContainer = document.getElementById("image-container");
-
     document
       .getElementById("image-options-form")
       .addEventListener("click", () => {
@@ -114,6 +111,11 @@ export default function unsplashApi() {
       });
   };
 
+  const getDocumentElements = () => {
+    loader = document.getElementById("loader");
+    imageContainer = document.getElementById("image-container");
+  };
+
   // Check if scrolling near bottom of page, if so then load more images
   window.addEventListener("scroll", () => {
     if (
@@ -126,5 +128,5 @@ export default function unsplashApi() {
     }
   });
 
-  return { getImages, getImageOptions };
+  return { getDocumentElements, getImages, getImageOptions };
 }
