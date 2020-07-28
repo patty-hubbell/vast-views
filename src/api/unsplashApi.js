@@ -1,14 +1,55 @@
 export default function unsplashApi() {
-  let imagesArray = [];
+  let imagesArray = [
+    {
+      alt_description: "Testing",
+      links: {
+        html: "https://unsplash.com/photos/5a9dVfwhjd8",
+      },
+      urls: {
+        regular:
+          "https://images.unsplash.com/photo-1595480788080-b158faee4930?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+      },
+    },
+    {
+      alt_description: "Testing",
+      links: {
+        html: "https://unsplash.com/photos/5a9dVfwhjd8",
+      },
+      urls: {
+        regular:
+          "https://images.unsplash.com/photo-1586192889836-2a83cb685e1c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+      },
+    },
+    {
+      alt_description: "Testing",
+      links: {
+        html: "https://unsplash.com/photos/5a9dVfwhjd8",
+      },
+      urls: {
+        regular:
+          "https://images.unsplash.com/photo-1595378502218-c4ff99cafee1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+      },
+    },
+    {
+      alt_description: "Testing",
+      links: {
+        html: "https://unsplash.com/photos/5a9dVfwhjd8",
+      },
+      urls: {
+        regular:
+          "https://images.unsplash.com/photo-1590611380053-da6447021fbb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+      },
+    },
+  ];
+
+  //let imagesArray = [];
   let ready = false;
   let imagesLoaded = 0;
   let totalImages = 0;
 
   const count = 30;
   const apiKey = "lA_pnbXwphLuyywI4jsVsH8_o43qhajfccxqwjiW6lQ";
-  const apiUrl = `https://api.unsplash.com/photos/random?client_id=${apiKey}&count=${count}`;
-
-  let loader;
+  const apiUrl = `https://api.unsplash.com/photos/random?client_id=${apiKey}&count=${count}&query=nature`;
 
   // Check if all the images were loaded
   const imageLoaded = () => {
@@ -25,7 +66,10 @@ export default function unsplashApi() {
   const displayImages = () => {
     const imageContainer = document.getElementById("image-container");
 
+    // Reset the number of images that have been loaded from latest response
     imagesLoaded = 0;
+
+    // Set the total images count to the number of images given in the latest response
     totalImages = imagesArray.length;
 
     // Populate the images container
@@ -53,8 +97,8 @@ export default function unsplashApi() {
   // Get photos from the Unsplash API
   const getImages = async () => {
     try {
-      const response = await fetch(apiUrl);
-      imagesArray = await response.json();
+      //const response = await fetch(apiUrl);
+      //imagesArray = await response.json();
       displayImages();
     } catch (error) {}
   };
