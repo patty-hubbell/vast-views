@@ -1,47 +1,4 @@
 export default function unsplashApi() {
-  /*   let imagesArray = [
-    {
-      alt_description: "Testing",
-      links: {
-        html: "https://unsplash.com/photos/5a9dVfwhjd8",
-      },
-      urls: {
-        regular:
-          "https://images.unsplash.com/photo-1595480788080-b158faee4930?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-      },
-    },
-    {
-      alt_description: "Testing",
-      links: {
-        html: "https://unsplash.com/photos/5a9dVfwhjd8",
-      },
-      urls: {
-        regular:
-          "https://images.unsplash.com/photo-1586192889836-2a83cb685e1c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-      },
-    },
-    {
-      alt_description: "Testing",
-      links: {
-        html: "https://unsplash.com/photos/5a9dVfwhjd8",
-      },
-      urls: {
-        regular:
-          "https://images.unsplash.com/photo-1595378502218-c4ff99cafee1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-      },
-    },
-    {
-      alt_description: "Testing",
-      links: {
-        html: "https://unsplash.com/photos/5a9dVfwhjd8",
-      },
-      urls: {
-        regular:
-          "https://images.unsplash.com/photo-1590611380053-da6447021fbb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-      },
-    },
-  ]; */
-
   let imageOptions = "both";
 
   let loader;
@@ -52,7 +9,7 @@ export default function unsplashApi() {
   let imagesLoaded = 0;
   let totalImages = 0;
 
-  const count = 30;
+  let count = 5;
   const apiKey = "lA_pnbXwphLuyywI4jsVsH8_o43qhajfccxqwjiW6lQ";
   const apiUrlBoth = `https://api.unsplash.com/photos/random?client_id=${apiKey}&count=${count}&query=nature`;
   const apiUrlPortrait = `https://api.unsplash.com/photos/random?client_id=${apiKey}&count=${count}&query=nature&orientation=portrait`;
@@ -65,6 +22,7 @@ export default function unsplashApi() {
     if (imagesLoaded === totalImages) {
       ready = true;
       loader.hidden = true;
+      count = 30;
     }
   };
 
@@ -130,6 +88,7 @@ export default function unsplashApi() {
           imageContainer.textContent = "";
           window.scrollTo(0, 0);
           loader.hidden = false;
+          count = 5;
           getImages();
         } else if (
           document.getElementById("landscape").checked &&
@@ -139,6 +98,7 @@ export default function unsplashApi() {
           imageContainer.textContent = "";
           window.scrollTo(0, 0);
           loader.hidden = false;
+          count = 5;
           getImages();
         } else if (
           document.getElementById("both").checked &&
@@ -148,6 +108,7 @@ export default function unsplashApi() {
           imageContainer.textContent = "";
           window.scrollTo(0, 0);
           loader.hidden = false;
+          count = 5;
           getImages();
         }
       });
