@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import Switch from "react-switch";
+
 import ImageOptions from "./ImageOptions";
 
 export default function Header() {
@@ -11,7 +13,9 @@ export default function Header() {
       <Head.Middle>
         <Head.Title id="header-title">Vast Views</Head.Title>
       </Head.Middle>
-      <Head.Right></Head.Right>
+      <Head.Right>
+        <Switch />
+      </Head.Right>
     </Head.Container>
   );
 }
