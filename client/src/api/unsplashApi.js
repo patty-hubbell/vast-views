@@ -20,9 +20,9 @@ export default function unsplashApi() {
   let imageLoadCount = 10;
 
   // Initialize API urls for each possible request (Portrait nature images, landscape, or both)
-  const apiUrlBoth = `http://localhost:5000/api/random/both/${imageLoadCount}`;
-  const apiUrlPortrait = `http://localhost:5000/api/random/portrait/${imageLoadCount}`;
-  const apiUrlLandscape = `http://localhost:5000/api/random/landscape/${imageLoadCount}`;
+  const apiUrlBoth = `/api/random/both/${imageLoadCount}`;
+  const apiUrlPortrait = `/api/random/portrait/${imageLoadCount}`;
+  const apiUrlLandscape = `/api/random/landscape/${imageLoadCount}`;
 
   // Check if all the images were loaded
   const imageLoaded = () => {
