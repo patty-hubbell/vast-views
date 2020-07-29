@@ -19,8 +19,6 @@ export default function unsplashApi() {
   // reduce initial loading times
   let imageLoadCount = 10;
 
-  const apiKey = "lA_pnbXwphLuyywI4jsVsH8_o43qhajfccxqwjiW6lQ";
-
   // Initialize API urls for each possible request (Portrait nature images, landscape, or both)
   const apiUrlBoth = `http://localhost:8000/api/random/both/${imageLoadCount}`;
   const apiUrlPortrait = `http://localhost:8000/api/random/portrait/${imageLoadCount}`;
