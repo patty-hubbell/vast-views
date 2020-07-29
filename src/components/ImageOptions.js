@@ -23,7 +23,7 @@ export default function ImageOptions() {
     <>
       <Options.Button id="image-options-button" onClick={handleClick}>
         <Options.Icon icon={faImage} />
-        Image Options
+        Options
       </Options.Button>
       <Options.Form id="image-options-form">
         <input type="radio" id="portrait" name="display" value="portrait" />
@@ -72,7 +72,7 @@ const Options = {
     margin-right: 0.3rem;
   `,
   Form: styled.form`
-    background-color: var(--light);
+    background-color: var(--background);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     color: var(--primary);

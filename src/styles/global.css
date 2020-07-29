@@ -46,20 +46,34 @@ body {
     font-size: 1.7rem;
   }
 
+  #info-title {
+    font-size: 1.2rem;
+  }
+
   #image-container {
     margin: 10px;
   }
 
-  #image-options-button {
+  #image-options-button,
+  #image-options-form,
+  #info-author,
+  #info-icon,
+  #info-text,
+  #label-text,
+  #theme-icon {
     font-size: 0.8rem;
   }
 
   #image-options-form {
-    font-size: 0.8rem;
     top: 4rem;
   }
 
-  #label-text {
-    font-size: 0.8rem;
+  #theme-icon {
+    margin-right: 10px;
+  }
+
+  #info-button {
+    height: 2.5rem;
+    width: 2.5rem;
   }
 }
