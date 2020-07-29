@@ -96,11 +96,11 @@ export default function unsplashApi() {
       // Request images from the API with the url string corresponding to the
       // current image option selection
       if (imageOptions === "both") {
-        response = await fetch(apiUrlBoth);
+        //response = await fetch(apiUrlBoth);
       } else if (imageOptions === "portrait") {
-        response = await fetch(apiUrlPortrait);
+        //response = await fetch(apiUrlPortrait);
       } else if (imageOptions === "landscape") {
-        response = await fetch(apiUrlLandscape);
+        //response = await fetch(apiUrlLandscape);
       }
 
       // Get the images array
