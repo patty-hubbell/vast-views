@@ -10,7 +10,7 @@ const Imgs = {
     margin: 10px 30%;
 
     & img {
-      margin-bottom: 5px;
+      margin-top: 10px;
       width: 100%;
     }
   `,

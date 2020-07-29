@@ -53,7 +53,7 @@ const Options = {
     color: var(--primary);
     cursor: pointer;
     font-family: var(--text);
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 700;
     height: 2rem;
     outline: 0;
@@ -77,11 +77,11 @@ const Options = {
     border-bottom-right-radius: 10px;
     color: var(--primary);
     font-family: var(--text);
-    font-size: 1rem;
+    font-size: 1.2rem;
     opacity: 0;
     padding: 0.5rem;
     position: absolute;
-    top: 4rem;
+    top: 5rem;
     transition: 500ms ease;
     visibility: hidden;
 

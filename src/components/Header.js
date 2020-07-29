@@ -25,7 +25,8 @@ const ContentContainer = styled.div`
 
 const Head = {
   Container: styled.div`
-    background-color: var(--light);
+    background-color: var(--header-background-color);
+    background-image: var(--header-background-image);
     display: flex;
     height: 5rem;
     position: fixed;
@@ -43,7 +44,8 @@ const Head = {
     width: 30%;
   `,
   Title: styled.h1`
-    font-size: 2rem;
+    color: var(--primary);
+    font-size: 2.3rem;
     letter-spacing: 3px;
     margin: 0;
   `,

@@ -3,7 +3,8 @@ import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
 
 import App from "./App";
-import "./global.css";
+import "./styles/global.css";
+import "./styles/header-background.css";
 
 ReactDOM.render(
   <React.StrictMode>
