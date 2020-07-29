@@ -64,7 +64,7 @@ const Options = {
     @media (hover: hover) and (pointer: fine) {
       &:hover {
         background-color: var(--primary);
-        color: var(--white);
+        color: var(--background);
       }
     }
   `,

@@ -1,18 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Fjalla+One&display=swap");
 
 :root {
-  --black: #000;
-  --dark: #2b2d42;
-  --gray: #8d99ae;
-  --light: #edf2f4;
+  --secondary: #8d99ae;
+  --background: #edf2f4;
+  --background-opaque: rgba(237, 242, 244, 0.8);
   --primary: #d90429;
+  --white: #fff;
+  --header-background-color: var(--header-background-color-light);
+  --header-background-image: var(--header-background-image-light);
+  --text: "Cabin", sans-serif;
+}
+
+[data-theme="dark"] {
+  --background: #2b2d42;
+  --background-opaque: rgba(43, 45, 66, 0.8);
+  --primary: #edf2f4;
   --secondary: #ef233c;
   --white: #fff;
+  --header-background-color: var(--header-background-color-dark);
+  --header-background-image: var(--header-background-image-dark);
   --text: "Cabin", sans-serif;
 }
 
 body {
-  background-color: var(--light);
+  background-color: var(--background);
   margin: 0;
   margin-top: 5rem;
   font-family: "Fjalla One", sans-serif;
@@ -46,5 +57,9 @@ body {
   #image-options-form {
     font-size: 0.8rem;
     top: 4rem;
+  }
+
+  #label-text {
+    font-size: 0.8rem;
   }
 }

@@ -11,7 +11,7 @@ export default function Loader() {
 
 const Load = {
   Container: styled.div`
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: var(--background-opaque);
     bottom: 0;
     left: 0;
     position: fixed;
