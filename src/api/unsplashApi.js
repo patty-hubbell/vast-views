@@ -22,9 +22,9 @@ export default function unsplashApi() {
   const apiKey = "lA_pnbXwphLuyywI4jsVsH8_o43qhajfccxqwjiW6lQ";
 
   // Initialize API urls for each possible request (Portrait nature images, landscape, or both)
-  const apiUrlBoth = `https://api.unsplash.com/photos/random?client_id=${apiKey}&count=${imageLoadCount}&query=nature`;
-  const apiUrlPortrait = `https://api.unsplash.com/photos/random?client_id=${apiKey}&count=${imageLoadCount}&query=nature&orientation=portrait`;
-  const apiUrlLandscape = `https://api.unsplash.com/photos/random?client_id=${apiKey}&count=${imageLoadCount}&query=nature&orientation=landscape`;
+  const apiUrlBoth = `http://localhost:8000/api/random/both/${imageLoadCount}`;
+  const apiUrlPortrait = `http://localhost:8000/api/random/portrait/${imageLoadCount}`;
+  const apiUrlLandscape = `http://localhost:8000/api/random/landscape/${imageLoadCount}`;
 
   // Check if all the images were loaded
   const imageLoaded = () => {
@@ -104,7 +104,14 @@ export default function unsplashApi() {
       }
 
       // Get the images array
-      imagesArray = await response.json();
+      const result = await response.json();
+
+      if (result.success) {
+        imagesArray = result.imagesArray;
+        console.log(imagesArray);
+      } else {
+        console.error(result.message);
+      }
 
       // If the imageLoadCount is set to the initial value of 5, change the
       // value to 30
