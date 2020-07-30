@@ -103,6 +103,7 @@ export default function unsplashApi() {
 
       // Get the images array
       const result = await response.json();
+      console.log(result);
 
       if (result.success) {
         imagesArray = result.imagesArray;
