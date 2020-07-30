@@ -73,7 +73,11 @@ body {
   }
 
   #info-button {
-    height: 2.5rem;
-    width: 2.5rem;
+    height: 3.5rem;
+    width: 3.5rem;
+  }
+
+  #info-text-container {
+    width: 80%;
   }
 }
