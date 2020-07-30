@@ -22,8 +22,9 @@ app.use(limiter);
 // Allow CORS from any origin
 app.use(cors());
 
-// Test route
-app.get("/", (req, res) => res.send("Hello World!"));
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
 
 app.get("/api/random/:orientation/:count", async (req, res) => {
   try {
