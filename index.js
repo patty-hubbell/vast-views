@@ -6,6 +6,8 @@ var cors = require("cors");
 const path = require("path");
 const app = express();
 
+app.set("trust proxy", 1);
+
 const limiter = rateLimit({
   windowMs: 1000, // 1 second
   max: 1, // limit each IP to 1 requests per windowMs
