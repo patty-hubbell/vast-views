@@ -13,8 +13,8 @@ const limiter = rateLimit({
   max: 1, // limit each IP to 1 requests per windowMs
 });
 
-// Serve static files from the React app
-app.use(express.static(path.join(__dirname, "client/build")));
+/* // Serve static files from the React app
+app.use(express.static(path.join(__dirname, "../client/build"))); */
 
 // apply to all requests
 app.use(limiter);
@@ -54,11 +54,11 @@ app.get("/api/random/:orientation/:count", async (req, res) => {
 
 if (process.env.NODE_ENV === "production") {
   // Serve any static files
-  app.use(express.static(path.join(__dirname, "client/build")));
+  app.use(express.static(path.join(__dirname, "../client/build")));
 
   // Handle React routing, return all requests to React app
   app.get("*", function (req, res) {
-    res.sendFile(path.join(__dirname, "client/build", "index.html"));
+    res.sendFile(path.join(__dirname, "../client/build", "index.html"));
   });
 }
 
