@@ -13,8 +13,8 @@ const limiter = rateLimit({
   max: 1, // limit each IP to 1 requests per windowMs
 });
 
-/* // Serve static files from the React app
-app.use(express.static(path.join(__dirname, "../client/build"))); */
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, "client/build")));
 
 // apply to all requests
 app.use(limiter);
