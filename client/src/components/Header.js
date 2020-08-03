@@ -39,6 +39,7 @@ const Head = {
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 1;
   `,
   Left: styled(ContentContainer)`
     position: relative;
@@ -63,5 +64,6 @@ const Head = {
     position: fixed;
     margin: 0;
     width: 100%;
+    z-index: 1;
   `,
 };

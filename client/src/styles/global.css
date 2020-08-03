@@ -51,7 +51,8 @@ body {
   }
 
   #image-container {
-    margin: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   #image-options-button,

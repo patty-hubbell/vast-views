@@ -45,6 +45,13 @@ export default function unsplashApi() {
 
     // Populate the images container
     imagesArray.forEach((image) => {
+      console.log(image);
+      // image.user.profile_image.small
+
+      // Create the image and information container
+      const container = document.createElement("div");
+      container.setAttribute("class", "image-and-info-container");
+
       // Create a link to the photo's Unsplash page
       const item = document.createElement("a");
       item.setAttribute("href", image.links.html);
@@ -56,12 +63,55 @@ export default function unsplashApi() {
       img.setAttribute("alt", image.alt_description);
       img.setAttribute("title", image.alt_description);
 
+      // Create the information container
+      const info = document.createElement("div");
+      info.setAttribute("class", "image-info");
+
+      // Create the author name element
+      const authorName = document.createElement("p");
+      authorName.setAttribute("class", "image-author-name");
+      authorName.textContent = image.user.name;
+
+      // Create the author profile image element
+      const authorPic = document.createElement("img");
+      authorPic.setAttribute("src", image.user.profile_image.small);
+      authorPic.setAttribute("alt", "");
+      authorPic.setAttribute("title", "");
+      authorPic.setAttribute("class", "image-author-pic");
+
+      // Create author link
+      const authorLink = document.createElement("a");
+      authorLink.setAttribute(
+        "href",
+        `https://unsplash.com/@${image.user.username}`
+      );
+      authorLink.setAttribute("target", "_blank");
+      authorLink.setAttribute("class", "image-author-link");
+
+      // Create the image download link
+      const downloadLink = document.createElement("a");
+      downloadLink.setAttribute("href", image.links.download);
+      downloadLink.setAttribute("target", "_blank");
+      downloadLink.setAttribute("download", "image.png");
+      downloadLink.setAttribute("class", "image-download-link");
+
+      // Create the image download icon
+      const downloadIcon = document.createElement("p");
+      downloadIcon.textContent = "Download";
+
       // Check when the image is finished loading
       img.addEventListener("load", imageLoaded);
 
       // Put the image inside the link, put the link in the image container
       item.appendChild(img);
-      imageContainer.appendChild(item);
+      container.appendChild(item);
+      authorLink.append(authorName);
+      downloadLink.append(downloadIcon);
+      info.appendChild(authorPic);
+      info.appendChild(authorLink);
+      info.appendChild(downloadLink);
+      container.appendChild(info);
+      imageContainer.appendChild(container);
     });
   };
 
@@ -110,7 +160,7 @@ export default function unsplashApi() {
         console.error(result.message);
       }
 
-      // If the imageLoadCount is set to the initial value of 5, change the
+      // If the imageLoadCount is set to the initial value of 10, change the
       // value to 30
       if (imageLoadCount === 10) {
         imageLoadCount = 30;
